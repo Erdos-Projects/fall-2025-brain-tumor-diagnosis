@@ -1,4 +1,4 @@
-# Brain Tumer Diagnosis  
+# Brain Tumor Diagnosis  
 ## Erdos Institute Data Science Project, Fall 2025  
 ### Author  
 
