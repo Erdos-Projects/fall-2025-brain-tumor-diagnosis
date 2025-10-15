@@ -8,9 +8,11 @@ Calabrese, E., Villanueva-Meyer, J., Rudie, J., Rauschecker, A., Baid, U., Bakas
 
 - Chris Ewasiuk  
 - Rafiq Islam  
-- Jacob Johnson  
-- Wenwen Li  
-- Suo-Jun Tan  
+- Jacob Johnson
+- Michael Kuian  
+- Wenwen Li
+- Suo-Jun Tan 
   
 (*Alphabatic Order*)
+
 
