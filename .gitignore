@@ -2,3 +2,4 @@
 *.eddy_rotated_bvecs
 data
 *.ipynb_checkpoints
+*__pycache__
