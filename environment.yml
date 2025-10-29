@@ -28,3 +28,5 @@ dependencies:
       - plotly == 5.24.0
       - seaborn == 0.13.2
       - ucimlrepo
+      - torch == 2.9.0
+      - torchvision == 0.24.0
