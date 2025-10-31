@@ -24,6 +24,9 @@ Summary of Results:
 - Images of our results against all metrics can be seen further in the folder titled 'Summary Images'
 - Overall the model responds well to various tumor grades but since the dataset only includes tumorous patients, we cannot say how well the model works on a full scan of a health brain. However, when looking at healthy subregions
   of tumorous patients, the model performs very well against all metrics.
+  
+best.pt:
+- Model obtained using the code described above. Model formatted as a pytorch object and is used for all evaluation against test dataset.
 
 test_metrics.csv:
 - Output file summarizing scores of patient against each metric chosen.
