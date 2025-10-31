@@ -6,13 +6,13 @@ Calabrese, E., Villanueva-Meyer, J., Rudie, J., Rauschecker, A., Baid, U., Bakas
 ## Erdos Institute Data Science Project, Fall 2025  
 ### Author  
 
-- Chris Ewasiuk  
-- Rafiq Islam  
+- Chris Ewasiuk   
 - Jacob Johnson
 - Michael Kuian  
 - Wenwen Li
 - Suo-Jun Tan 
   
 (*Alphabatic Order*)
+
 
 
