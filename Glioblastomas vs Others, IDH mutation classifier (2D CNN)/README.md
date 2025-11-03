@@ -13,4 +13,4 @@ Glioblastoma_and_IDH_mutation.ipynb
     - The model jointly processes imaging and metadata features (sex and age) through a hybrid CNN–fully connected architecture to perform binary classification of IDH status.
 
 IDH_classifier.pth
-- Best model for the IDH classifier (the epoch with lowest loss on the validation data). This was then used to test against the hold-out test data. 
+- Best model for the IDH classifier (the epoch where training loss starts to plateau). This was then used to test against the hold-out test data. 
