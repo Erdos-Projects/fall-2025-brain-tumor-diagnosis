@@ -11,7 +11,8 @@ Calabrese, E., Villanueva-Meyer, J., Rudie, J., Rauschecker, A., Baid, U., Bakas
 - Wenwen Li
 - Suo-Jun Tan 
   
-(*Alphabatic Order*)
+(*Alphabetical Order*)
+
 
 
 
