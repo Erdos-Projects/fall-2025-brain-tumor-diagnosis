@@ -5,6 +5,7 @@ Glioblastoma_and_IDH_mutation.ipynb
 - some EDA needed for the models (sex vs tumor grade, age distribution, IDH mutation, 1p/19q codeletion)
 - Glioblastoma vs Others CNN model
     - The dataset consists of 396 patients with Glioblastoma tumors and 99 others. We first set aside 20% of the cases as a held-out test set, and further divided the remaining data into 80% training and 20% validation subsets.
+    - For each patient, a single 2D slice corresponding to the plane of maximum tumor area was extracted from the segmentation mask.
     - Modalities: ADC, Flair, T1, T1c and T2
     - Metadata features fed: sex, age, IDH mutation, 1p/19q codeletion
 - IDH mutation classifier CNN model
