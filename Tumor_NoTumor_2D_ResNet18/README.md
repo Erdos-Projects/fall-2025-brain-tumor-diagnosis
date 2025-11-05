@@ -11,6 +11,7 @@ Calabrese, E., Villanueva-Meyer, J., Rudie, J., Rauschecker, A., Baid, U., Bakas
 - Image labels (tumor/no-tumor) are determined from tumor segmentation in the original dataset. Images are saved in tumor and notumor directories for ease of viewing and label recovery.
 - Images are further saved into directories labeled by the modality of the measurement (T1, T1c, T2, FLAIR).
 - Image filenames contain the patient_id, longitudinal axis of the MRI cross-section (mri-axis), and the coordinate that the slice is taken from (slice).
+- Images used in the training, validation, and testing of the model are stored in a Google Drive: https://drive.google.com/drive/folders/1K2a1wk1ypiMCi0OhoNT8mHMcoaSGd0Pu?usp=drive_link
 
 MRIDataset.py
 - Dataset needs to be initialized with a pandas DataFrame containing patient id, path to MRI image, and a target label (1 for tumor, 0 for no-tumor).
@@ -56,5 +57,5 @@ Summary of Results:
 
 models/model_foldX_resnet_FLAIR.pth:
 - Best model from each fold (X).
-- Final model taken from fold 2.
-    
+- Final model taken from fold 2.   
+
