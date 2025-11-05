@@ -1,6 +1,7 @@
 name: fall_2025_brain_tumor_diagnosis
 channels:
   - conda-forge
+  - pytorch
 dependencies:
   - jupyter 
   - matplotlib >= 3.8
