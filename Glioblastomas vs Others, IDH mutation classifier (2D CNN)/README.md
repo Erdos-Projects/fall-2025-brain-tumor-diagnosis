@@ -5,7 +5,7 @@ This repository contains models and preprocessing pipelines for MRI-based classi
 
 The work combines 2D multi-modal MRI slices with clinical metadata to build a hybrid deep learning framework for precision neuro-oncology.
 
-📂 Notebook
+📂 Notebook: 
 Glioblastoma_and_IDH_mutation.ipynb
 
 This notebook includes:
