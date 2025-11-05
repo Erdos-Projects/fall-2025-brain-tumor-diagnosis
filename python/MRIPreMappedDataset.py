@@ -64,7 +64,8 @@ class MRIPreMappedDataset(Dataset):
                  base_path: str, 
                  data_map: pd.DataFrame, 
                  selected_modalities: list[str] = ["T1"],
-                 mri_axis: int = 2) -> None:
+                 mri_axis: int = 2,
+                 transform=None) -> None:
         """
         Dataset for multi-channel 2D MRI slices
 
@@ -91,6 +92,7 @@ class MRIPreMappedDataset(Dataset):
             print("Warning: mri_axis is out of bounds. Please select an integer from 0, 1, and 2. Setting mri_axis to 2 for this instance.")
             self.mri_axis = 2
             self.transverse_axes = (0,1)
+        self.transform = transform
 
 
 
@@ -143,8 +145,11 @@ class MRIPreMappedDataset(Dataset):
 
         # Get label
         label = torch.tensor(target, dtype=torch.float32)
+        img_tensor = torch.tensor(img_tensor, dtype=torch.float32)
+        if self.transform:
+            img_tensor = self.transform(img_tensor)
 
-        return torch.tensor(img_tensor, dtype=torch.float32), torch.tensor(np.array([label]), dtype=torch.float32)
+        return img_tensor, torch.tensor(np.array([label]), dtype=torch.float32)
 
     
 if __name__ == "__main__":
