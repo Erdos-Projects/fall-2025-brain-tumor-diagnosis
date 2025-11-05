@@ -20,7 +20,7 @@ class SampleMapper():
         # Traverse data_dir
         tumor_dir = self.data_dir + "/tumor/" + self.modality
         notumor_dir = self.data_dir + "/notumor/" + self.modality
-        # name template is "{patiend_id}_mri-axis-{mri_axis}_slice-{slice}.png"
+        # name template is "{patient_id}_mri-axis-{mri_axis}_slice-{slice}.png"
         # patient_id matches 'UCSF-PDGM-XXXX' 
         for tumor_file in os.listdir(tumor_dir):
             file_split = tumor_file.split("_")
@@ -35,20 +35,25 @@ class SampleMapper():
                 
 
 
-class MRIPreMappedImagesDataset(Dataset):
+class MRIDataset(Dataset):
     def __init__(self, 
                  data_map: pd.DataFrame, 
                  pre_transforms: list[v2.Transform]=[v2.PILToTensor(),v2.Resize((128,128)),v2.ToDtype(torch.float32, scale=True)],
                  additional_transforms: list[v2.Transform]=[],
-                 to_rgb: bool=False) -> None:
+                 to_rgb: bool=True) -> None:
         """
-        Dataset for multi-channel 2D MRI slices
+        Dataset for 2D MRI slices
 
         Args:
-            base_path: Path to folder containing patient folders.
-            data_map: Dataframe with rows of patient_id (str), slice (int), and target (0 or 1).
-            selected_modalities: List of modality names to use. Default to T1.
-            mri_axis: The longitudinal axis images are selected from. Must be an integer value from 0, 1, 2.
+            data_map: Pandas DataFrame with columns patient_id, path, target. 
+                      patient_id is the patient ID. For this dataset they take the form UCSF-PDGM-XXXX.
+                      path contains a single string directing to the location of an MRI image. 
+                      target is either 0 (no-tumor) or 1 (tumor).
+                      Can be constructed from SampleMapper. 
+            pre_transforms: Transformations applied to the raw image data.
+                            Default preprocessing converts image to a pytorch tensor, followed by a resizing to 128,128 required for resnet18, and a type conversion and rescaling to [0,1].
+            additional_transforms: Any additional transformations applied to data before training (someting like random rotations, flips, or zooms).
+            to_rgb: Boolean value. True is set to convert grayscale images to 3-channel 'rgb' by stacking the grayscale image three times. Required as input to resnet18 
         """
         # data_map to be populated with (patient_id, slice, target)
         # patient_id: ID designating the patient label. Is the prefix to the to the data directory (*_nifti) and the individual mri files.
@@ -92,7 +97,7 @@ if __name__ == "__main__":
 
 
     data_map = sample_mapper.data_map
-    dataset = MRIPreMappedImagesDataset(data_map)
+    dataset = MRIDataset(data_map)
     print(len(dataset))
     print(dataset[0])
     print(dataset[1])
