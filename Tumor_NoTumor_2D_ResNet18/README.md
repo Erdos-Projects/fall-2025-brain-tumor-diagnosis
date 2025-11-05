@@ -54,10 +54,7 @@ Summary of Results:
 - Summary of results can be found in the Summarize_BC_ResNet_splits.ipynb notebook and in the figures directory.
 
 
-model_foldX_resnet_FLAIR.pth:
+models/model_foldX_resnet_FLAIR.pth:
 - Best model from each fold (X).
 - Final model taken from fold 2.
     
-UCSF-PDGM-metadata_v5.csv:
-- Includes metadata of our chosen dataset.
-- Includes things like tumor type and grade, as well as information about specific patients like Age or Sex (M/F).
