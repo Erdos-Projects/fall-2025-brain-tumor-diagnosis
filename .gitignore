@@ -1,2 +1,6 @@
 *.nii
 *.eddy_rotated_bvecs
+data
+*.ipynb_checkpoints
+*__pycache__
+python/models
